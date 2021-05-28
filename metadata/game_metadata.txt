@@ -1,0 +1,7 @@
+devid=mgmarlow
+devtitle=Graham Marlow
+gameid=blocklike
+gametitle=Blocklike
+version=0.1
+icon=metadata/icon.png
+compile_ruby=false

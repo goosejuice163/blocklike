@@ -1,5 +1,5 @@
 require 'app/state_machine.rb'
-require 'app/menu_state.rb'
+require 'app/states/menu_state.rb'
 
 class Game
   attr_accessor :args, :gtk, :state, :inputs, :outputs, :grid
