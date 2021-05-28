@@ -1,13 +1,26 @@
+require 'app/entities/label.rb'
+
 require 'app/state_machine.rb'
+require 'app/states/base_state.rb'
 require 'app/states/menu_state.rb'
+require 'app/states/play_state.rb'
 
 class Game
   attr_accessor :args, :gtk, :state, :inputs, :outputs, :grid
 
+  def initialize
+    @created = false
+  end
+
   def init
-    state.state_machine ||= StateMachine.new({
-      menu: MenuState.new
+    return if @created
+
+    state.state_machine = StateMachine.new({
+      menu: MenuState.new,
+      play: PlayState.new
     }, :menu)
+
+    @created = true
   end
 
   def tick
