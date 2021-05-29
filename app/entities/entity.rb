@@ -34,5 +34,21 @@ class Entity
     @cx = (xx / side).to_i
     @cy = (yy / side).to_i
   end
+
+  def serialize
+    {
+      id: id,
+      cx: cx,
+      cy: cy
+    }
+  end
+
+  def inspect
+    serialize.to_s
+  end
+
+  def to_s
+    serialize.to_s
+  end
 end
 

@@ -17,10 +17,7 @@ class TransactionEngine
   # Serializable representation of game state
   def create_initial_board_state(entities)
     entities.each_with_object({}) do |ent, hsh|
-      hsh[ent.id] = {
-        cx: ent.cx,
-        cy: ent.cy
-      }
+      hsh[ent.id] = ent.serialize
     end
   end
 
