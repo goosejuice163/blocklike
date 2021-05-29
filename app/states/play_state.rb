@@ -1,6 +1,10 @@
 class PlayState < BaseState
+  def on_create
+    @player = Player.new
+  end
+
   def tick(args)
     super(args)
-    args.outputs.labels << [580, 400, 'play state']
+    @player.tick(args)
   end
 end

@@ -1,3 +1,5 @@
+require 'app/entities/entity.rb'
+require 'app/entities/player.rb'
 require 'app/entities/label.rb'
 
 require 'app/state_machine.rb'

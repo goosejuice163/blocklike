@@ -11,11 +11,11 @@ class Label
 
   def tick(args)
     @args = args
-    @args.outputs.labels << primitive
+    render
   end
 
-  def primitive
-    { x: x, y: y, text: text, size_enum: size_enum, font: font }
+  def render
+    @args.outputs.labels << { x: x, y: y, text: text, size_enum: size_enum, font: font }
   end
 
   def center
