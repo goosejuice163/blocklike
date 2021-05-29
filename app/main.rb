@@ -9,6 +9,9 @@ require 'app/states/base_state.rb'
 # Entities
 require 'app/entities/entity.rb'
 require 'app/entities/player.rb'
+require 'app/entities/box.rb'
+require 'app/entities/wall.rb'
+require 'app/entities/dest.rb'
 require 'app/entities/label.rb'
 
 # States

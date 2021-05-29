@@ -24,8 +24,8 @@ class Entity
   def set_coords(cx, cy)
     @cx = cx
     @cy = cy
-    @xx = (cx * side).to_i
-    @yy = (cy * side).to_i
+    @xx = cx * side
+    @yy = cy * side
   end
 
   def set_coords_from_px(xx, yy)

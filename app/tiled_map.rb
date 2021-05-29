@@ -13,14 +13,20 @@ class TiledMap
 
   def create_entities
     entities = []
+
+    # Subtract by vertical max to translate to bottom-left alignment in DR
+    vertical_max = map_data["height"] * map_data["tileheight"]
     
     map_data["layers"].last["objects"].each do |ent|
       case ent["name"]
       when "player"
-        entities << Player.new(ent["id"], ent["x"], 720 - ent["y"])
+        entities << Player.new(ent["id"], ent["x"], vertical_max - ent["y"])
       when "wall"
+        entities << Wall.new(ent["id"], ent["x"], vertical_max - ent["y"])
       when "box"
+        entities << Box.new(ent["id"], ent["x"], vertical_max - ent["y"])
       when "dest"
+        entities << Dest.new(ent["id"], ent["x"], vertical_max - ent["y"])
       end
     end
 
