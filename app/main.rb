@@ -1,6 +1,7 @@
 # Core
 require 'app/point.rb'
 require 'app/tiled_map.rb'
+require 'app/transaction_engine.rb'
 require 'app/state_machine.rb'
 require 'app/states/base_state.rb'
 
