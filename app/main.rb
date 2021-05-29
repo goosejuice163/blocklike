@@ -1,9 +1,15 @@
+# Core
+require 'app/point.rb'
+require 'app/tiled_map.rb'
+require 'app/state_machine.rb'
+require 'app/states/base_state.rb'
+
+# Entities
 require 'app/entities/entity.rb'
 require 'app/entities/player.rb'
 require 'app/entities/label.rb'
 
-require 'app/state_machine.rb'
-require 'app/states/base_state.rb'
+# States
 require 'app/states/menu_state.rb'
 require 'app/states/play_state.rb'
 
