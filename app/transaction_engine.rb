@@ -4,9 +4,7 @@ class TransactionEngine
     @board_state = create_initial_board_state(args.state.entities)
 
     args.state.dispatch = ->(action) {
-      # TODO: compose reducers for different entities
-      # e.g. Player.reducer, Box.reducer
-      new_state = reduce(@board_state.dup, action)
+      new_state = Reducer.reduce(@board_state.dup, action)
       return if new_state.to_s == @board_state.to_s
 
       @previous_states << @board_state.dup
@@ -28,26 +26,5 @@ class TransactionEngine
     entities.each_with_object({}) do |ent, hsh|
       hsh[ent.id] = ent.serialize
     end
-  end
-
-  def reduce(state, action)
-    payload = action[:payload]
-
-    case action[:type]
-    when :move
-      handle_move(state, payload)
-    else
-      state
-    end
-  end
-
-  def handle_move(state, payload)
-    {
-      **state,
-      payload[:entity_id] => {
-        cx: payload[:cx],
-        cy: payload[:cy]
-      }
-    }
   end
 end
